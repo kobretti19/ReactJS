@@ -4,6 +4,9 @@
   padding: 2rem;
   text-align: center;
 }
+body {
+  background: radial-gradient(#2dbb9c, #93cc88);
+}
 .card-container {
   display: flex;
   flex-direction: column;
@@ -22,7 +25,7 @@
 }
 .card-container:hover {
   cursor: pointer;
-  background-color: rgba(227, 243, 219, 0.452);
+  background-color: rgba(248, 242, 242, 0.808);
   font-size: 1.6rem;
 }
 .check-container {
