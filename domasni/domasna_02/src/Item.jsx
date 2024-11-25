@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 const Item = ({ name, isPacked }) => {
   return (
     <div className="items-container">
