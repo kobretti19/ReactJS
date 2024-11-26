@@ -8,6 +8,10 @@ export const ITEMS = [
     isPacked: false,
   },
   {
+    name: "Wallets",
+    isPacked: true,
+  },
+  {
     name: "Medication",
     isPacked: true,
   },

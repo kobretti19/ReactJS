@@ -8,12 +8,13 @@ const PackageList = () => {
       <img id="img-checklist" src={checklistImg} />
       <ol>
         <h2>CHECKLIST</h2>
-        <Item name={ITEMS[0].name} isPacked={ITEMS[0].isPacked} />
-        <Item name={ITEMS[1].name} isPacked={ITEMS[1].isPacked} />
-        <Item name={ITEMS[2].name} isPacked={ITEMS[2].isPacked} />
-        <Item name={ITEMS[3].name} isPacked={ITEMS[3].isPacked} />
-        <Item name={ITEMS[4].name} isPacked={ITEMS[4].isPacked} />
-        <Item name={ITEMS[5].name} isPacked={ITEMS[5].isPacked} />
+        <Item {...ITEMS[0]} />
+        <Item {...ITEMS[1]} />
+        <Item {...ITEMS[2]} />
+        <Item {...ITEMS[3]} />
+        <Item {...ITEMS[4]} />
+        <Item {...ITEMS[5]} />
+        <Item {...ITEMS[6]} />
       </ol>
     </div>
   );
