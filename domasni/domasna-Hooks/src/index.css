@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  button {
+    @apply bg-slate-500 p-2 rounded-lg w-32 hover:bg-slate-400;
+  }
+  input {
+    @apply p-1 rounded-md text-[#48566B];
+  }
+  form {
+    @apply flex flex-col justify-center p-4 text-white text-base bg-gradient-to-r from-slate-500 to-slate-500 rounded-md  gap-1;
+  }
+  form span {
+    @apply text-red-400;
+  }
+}
+@layer components {
+  .active {
+    @apply bg-slate-400;
+  }
+
+  .btn-input {
+    @apply bg-white p-1 rounded-md mt-3 text-[#48566B] font-semibold hover:bg-gray-300;
+  }
+}
