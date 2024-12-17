@@ -1,0 +1,44 @@
+.header--view {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  align-content: center;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.nav-view {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav-view a {
+  color: whitesmoke;
+  text-decoration: none;
+  margin-left: 20px;
+}
+.nav-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.nav-buttons button {
+  padding: 0.7rem 1.6rem;
+  font-size: large;
+  border-radius: 3rem;
+}
+.nav-buttons button:first-child {
+  border: 0.1rem solid white;
+  background-color: transparent;
+  color: white;
+}
+.nav-buttons button:last-child {
+  border: 0.1rem solid white;
+  background-color: white;
+}
+.nav-buttons button:last-child:hover {
+  background-color: #ffffffce;
+}
