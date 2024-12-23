@@ -8,28 +8,17 @@ import {
   UserIcon,
 } from "@heroicons/react/24/outline";
 import Category from "./Category";
-import { useEffect, useState } from "react";
+
 import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { LoginContext } from "../store/AuthProvider";
 
 const HeaderComponent = () => {
-  const [category, setCategory] = useState();
+  const { username } = useContext(LoginContext);
   const navigate = useNavigate();
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        fetch("https://fakestoreapi.com/products/categories")
-          .then((res) => res.json())
-          .then((json) => setCategory(json));
-      } catch (e) {
-        console.error(e);
-      }
-    };
-    fetchData();
-  }, [navigate]);
-
-  const handleCategories = (clicked) => {
-    navigate(`products/category/${clicked}`, "_blank", "noreferrer");
+  const handleLogOut = () => {
+    localStorage.removeItem("username");
+    localStorage.removeItem("password");
     window.location.reload();
   };
 
@@ -70,31 +59,28 @@ const HeaderComponent = () => {
           <span className="flex items-start hover:text-orange-500 cursor-pointer transition ease-out duration-200 font-light text-xs">
             <HeartIcon className="h-4 w-4 text-gray-600" /> листа на желби
           </span>
-          <span className="flex items-start hover:text-orange-500 cursor-pointer transition ease-out duration-200 font-light text-xs">
-            <UserIcon className="h-4 w-4 text-gray-600" /> Најависе
-          </span>
+          {username ? (
+            <span
+              onClick={handleLogOut}
+              className="flex items-start hover:text-orange-500 cursor-pointer transition ease-out duration-200 font-light text-xs"
+            >
+              <UserIcon className="h-4 w-4 text-gray-600" /> Одјави се
+            </span>
+          ) : (
+            <span
+              onClick={() => navigate("/login")}
+              className="flex items-start hover:text-orange-500 cursor-pointer transition ease-out duration-200 font-light text-xs"
+            >
+              <UserIcon className="h-4 w-4 text-gray-600" /> Најависе
+            </span>
+          )}
+
           <span className="flex items-start hover:text-orange-500 cursor-pointer transition ease-out duration-200 font-light text-xs">
             <ShoppingCartIcon className="h-4 w-4 text-gray-600" /> Кошничка
           </span>
         </div>
       </div>
-      <div className="flex flex-row justify-center items-center space-x-20 text-2xl text-orange-400 my-5 ">
-        {category?.map((cat, i) => (
-          <ol
-            className="hover:text-orange-200 transition-duration:150ms  hover:scale-110 "
-            key={i}
-          >
-            <li
-              role="link"
-              onClick={() => handleCategories(cat)}
-              className="cursor-pointer"
-            >
-              {cat}
-            </li>
-          </ol>
-        ))}
-      </div>
-      {/* <Category /> */}
+      <Category />
     </header>
   );
 };

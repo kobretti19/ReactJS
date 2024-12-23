@@ -1,10 +1,10 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 const ProductByIDPage = () => {
   const params = useParams();
   const id = params.id;
-  console.log(location);
 
   const [product, setProduct] = useState(null);
 
@@ -20,7 +20,6 @@ const ProductByIDPage = () => {
     };
     fetchData();
   }, []);
-  console.log(product);
 
   return (
     <div className="flex flex-col items-center justify-center bg-white shadow-2xl p-6 space-y-6 pb-10 w-2/3 mx-auto my-10 rounded-lg">
@@ -29,7 +28,10 @@ const ProductByIDPage = () => {
       <p className="w-2/3">{product?.description}</p>
       <div className="flex  justify-around w-2/3">
         <p className="text-2xl border-2 p-1 rounded-md text-[#ED8A19]">
-          {product?.price}$
+          <span className=" text-xl font-bold  left-2 bottom-2 space-x-2">
+            <span>{product?.price * 100}</span>
+            <span className="font-normal">ден</span>
+          </span>
         </p>
 
         <div className="flex flex-row items-center space-x-1">
