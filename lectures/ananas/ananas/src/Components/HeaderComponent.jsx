@@ -10,17 +10,23 @@ import {
 import Category from "./Category";
 
 import { useNavigate } from "react-router-dom";
-import { useContext } from "react";
-import { LoginContext } from "../store/AuthProvider";
+import { useSelector } from "react-redux";
+import { useEffect, useState } from "react";
 
 const HeaderComponent = () => {
-  const { username } = useContext(LoginContext);
+  const username = useSelector((state) => state.authController.username);
   const navigate = useNavigate();
+  const [checkUserName, setCheckUserName] = useState(false);
   const handleLogOut = () => {
     localStorage.removeItem("username");
     localStorage.removeItem("password");
     window.location.reload();
   };
+  useEffect(() => {
+    if (username === "") {
+      setCheckUserName(true);
+    }
+  }, [username]);
 
   return (
     <header>
@@ -59,7 +65,7 @@ const HeaderComponent = () => {
           <span className="flex items-start hover:text-orange-500 cursor-pointer transition ease-out duration-200 font-light text-xs">
             <HeartIcon className="h-4 w-4 text-gray-600" /> листа на желби
           </span>
-          {username ? (
+          {checkUserName ? (
             <span
               onClick={handleLogOut}
               className="flex items-start hover:text-orange-500 cursor-pointer transition ease-out duration-200 font-light text-xs"

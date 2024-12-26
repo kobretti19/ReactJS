@@ -2,9 +2,10 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { LoginContext } from "../store/AuthProvider";
+import { useSelector } from "react-redux";
 
 const ProductsCategories = () => {
-  const { username } = useContext(LoginContext);
+  const username = useSelector((state) => state.authController.username);
   const [products, setProducts] = useState(null);
   const navigate = useNavigate();
   const params = useParams();
