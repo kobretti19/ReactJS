@@ -9,7 +9,7 @@ export const ITEMS = [
   },
   {
     name: "Wallets",
-    isPacked: true,
+    isPacked: false,
   },
   {
     name: "Medication",

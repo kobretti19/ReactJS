@@ -22,7 +22,7 @@ const CardItemsRight = () => {
         <div className="flex justify-between flex-row space-x-2 w-full text-2xl font-bold">
           <span>Вкупно:</span>
           <span className="space-x-2">
-            <span>{Number((total * 100).toFixed(0))}</span>
+            <span>{(total * 100).toFixed(0)}</span>
             <span>ден</span>
           </span>
         </div>

@@ -1,9 +1,9 @@
-const CompletedTask = (completedTasks) => {
+const CompletedTask = ({ ...editedTasks }) => {
   return (
     <>
       <div>
         <ol className="bg-slate-300 ">
-          {completedTasks.map((task) => {
+          {editedTasks.map((task) => {
             if (task.text) {
               return <li key={task.id}>{task.text}</li>;
             }

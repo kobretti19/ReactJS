@@ -6,7 +6,7 @@ import TodoTasks from './TodoTasks';
 // homework
 
 // delete funkcija
-// skaam toa todo da se izbrishe pri klik na x kopceto.
+// sakam toa todo da se izbrishe pri klik na x kopceto.
 // edit -- vrednosta na inputott da e napolneta so momentalnta vrednost
 // na primer ako stisnam edit na test --> inputut ne treba da e prazen string tuku "test" i od tuka ke mozam
 // da editiram

@@ -29,11 +29,7 @@ const ProductsCategories = () => {
   }, [username]);
 
   const handleProductId = (value) => {
-    if (username === "") {
-      window.location.href = "/login";
-    } else {
-      navigate(`/product/${value}`);
-    }
+    navigate(`/product/${value}`);
   };
 
   return (

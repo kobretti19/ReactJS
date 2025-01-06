@@ -68,6 +68,16 @@ export function Formcomponnent({ setUserName: setUser }) {
     setUser(userName);
   }, [isSubmitted]);
 
+  useEffect(() => {
+    // if (!password || !passwordConfirm) {
+    //   return;
+    // } else {
+    //   validatePassword();
+    // }
+    validatePassword();
+    console.log("Use effect called");
+  }, [password, passwordConfirm]);
+
   const handleEvent = (event) => {
     event.preventDefault();
     handleSubmit();

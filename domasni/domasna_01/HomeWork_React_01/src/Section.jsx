@@ -53,7 +53,7 @@ const Section = () => {
             <h1>Employment</h1>
             <p className="right-text">
               <a href="https://www.dynavox.ch/de/index.php">
-                Dinavox Electronics SA, 3186 Düdingen
+                Dynavox Electronics SA, 3186 Düdingen
               </a>
             </p>
           </section>
@@ -75,7 +75,7 @@ const Section = () => {
                 <a href="https://de.wikipedia.org/wiki/Node.js">NodeJS</a>
               </li>
               <li>
-                <a href="https://de.wikipedia.org/wiki/React.js">ReactJS</a>
+                <a href="https://de.wikipedia.org/wiki/React">React</a>
               </li>
             </ul>
           </section>

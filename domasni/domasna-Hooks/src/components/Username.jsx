@@ -13,7 +13,7 @@ export default function Username({ intialUserName }) {
   }
 
   let editingUserName = (
-    <span className="font-semibold text-xl tracking-widest text-red-400">
+    <span className="font-semibold text-3xl tracking-widest text-red-400">
       {userName}
     </span>
   );

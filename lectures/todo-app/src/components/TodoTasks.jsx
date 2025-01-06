@@ -17,7 +17,6 @@ const TodoTasks = ({ todos, updateTodo, removeTodo }) => {
   function completedChange(value) {
     const filteredTasks = completedTasks.filter((todo) => todo.text !== value.text);
     setCompletedTasks([value, ...filteredTasks]);
-    console.log(completedTasks);
   }
 
   const submitUpdate = (value) => {
@@ -78,7 +77,7 @@ const TodoTasks = ({ todos, updateTodo, removeTodo }) => {
           </div>
         );
       })}
-      {/* <CompletedTask completedTasks={completedTasks} /> */}
+      {/* <CompletedTask editedTasks={completedTasks} /> */}
       <div className=" mt-6 space-y-2 bg-white min-h-[100px] p-3 rounded-md">
         {completedTasks.map((task) => {
           if (task.text) {
